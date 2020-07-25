@@ -30,7 +30,8 @@ import {
   InputGroupText,
   InputGroup,
   Row,
-  Col
+  Col,
+  CardFooter
 } from "reactstrap";
 
 class Login extends React.Component {
@@ -39,9 +40,54 @@ class Login extends React.Component {
       <>
         <Col lg="5" md="7">
           <Card className="bg-secondary shadow border-0">
-            <CardHeader className="bg-transparent pb-5">
-              <div className="text-muted text-center mt-2 mb-3">
-                <small>Sign in with</small>
+            <CardBody className="px-lg-5 pt-lg-5">
+              <div className="text-center text-muted mb-4">
+                <h2>Đăng nhập tài khoản</h2>
+              </div>
+              <Form role="form">
+                <FormGroup className="mb-3">
+                  <InputGroup className="input-group-alternative">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-email-83" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Tài khoản" type="email" autoComplete="new-email"/>
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup className="input-group-alternative">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="ni ni-lock-circle-open" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Mật khẩu" type="password" autoComplete="new-password"/>
+                  </InputGroup>
+                </FormGroup>
+                <div className="custom-control custom-control-alternative custom-checkbox">
+                  <input
+                    className="custom-control-input"
+                    id=" customCheckLogin"
+                    type="checkbox"
+                  />
+                  <label
+                    className="custom-control-label"
+                    htmlFor=" customCheckLogin"
+                  >
+                    <span className="text-muted">Ghi nhớ đăng nhập</span>
+                  </label>
+                </div>
+                <div className="text-center">
+                  <Button className="mt-4" color="primary" type="button">
+                  ĐĂNG NHẬP
+                  </Button>
+                </div>
+              </Form>
+            </CardBody>
+            <CardFooter>
+            <div className="text-muted text-center mt-2 mb-3">
+                <small>Đăng nhập với</small>
               </div>
               <div className="btn-wrapper text-center">
                 <Button
@@ -73,52 +119,7 @@ class Login extends React.Component {
                   <span className="btn-inner--text">Google</span>
                 </Button>
               </div>
-            </CardHeader>
-            <CardBody className="px-lg-5 py-lg-5">
-              <div className="text-center text-muted mb-4">
-                <small>Or sign in with credentials</small>
-              </div>
-              <Form role="form">
-                <FormGroup className="mb-3">
-                  <InputGroup className="input-group-alternative">
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="ni ni-email-83" />
-                      </InputGroupText>
-                    </InputGroupAddon>
-                    <Input placeholder="Email" type="email" autoComplete="new-email"/>
-                  </InputGroup>
-                </FormGroup>
-                <FormGroup>
-                  <InputGroup className="input-group-alternative">
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="ni ni-lock-circle-open" />
-                      </InputGroupText>
-                    </InputGroupAddon>
-                    <Input placeholder="Password" type="password" autoComplete="new-password"/>
-                  </InputGroup>
-                </FormGroup>
-                <div className="custom-control custom-control-alternative custom-checkbox">
-                  <input
-                    className="custom-control-input"
-                    id=" customCheckLogin"
-                    type="checkbox"
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor=" customCheckLogin"
-                  >
-                    <span className="text-muted">Remember me</span>
-                  </label>
-                </div>
-                <div className="text-center">
-                  <Button className="my-4" color="primary" type="button">
-                    Sign in
-                  </Button>
-                </div>
-              </Form>
-            </CardBody>
+            </CardFooter>
           </Card>
           <Row className="mt-3">
             <Col xs="6">
@@ -127,7 +128,7 @@ class Login extends React.Component {
                 href="#pablo"
                 onClick={e => e.preventDefault()}
               >
-                <small>Forgot password?</small>
+                <small style={{color:'#fff'}}>Quên mật khẩu?</small>
               </a>
             </Col>
             <Col className="text-right" xs="6">
@@ -136,7 +137,7 @@ class Login extends React.Component {
                 href="#pablo"
                 onClick={e => e.preventDefault()}
               >
-                <small>Create new account</small>
+                <small style={{color:'#fff'}}>Tạo tài khoản</small>
               </a>
             </Col>
           </Row>
